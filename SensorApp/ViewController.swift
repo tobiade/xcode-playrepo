@@ -26,14 +26,15 @@ class ViewController: UIViewController {
   // MARK: Actions
     
     @IBAction func accBttn(sender: UIButton) {
-//        motionkit.getAccelerometerValues(0.5) { (x, y, z) -> () in
-//            self.xAccelerometerValue.text=String(x)
-//            self.yAccelerometerValue.text=String(y)
-//            self.zAccelerometerValue.text=String(z)
-//        }
-        self.xAccelerometerValue.text="YAhhhhh"
-        self.yAccelerometerValue.text="Heyyyyyy"
-        self.zAccelerometerValue.text="Looooool"
+        
+        motionkit.getAccelerationAtCurrentInstant { (x, y, z) -> () in
+            self.xAccelerometerValue.text=String(x)
+            self.yAccelerometerValue.text=String(y)
+            self.zAccelerometerValue.text=String(z)
+        }
+//        self.xAccelerometerValue.text="YAhhhhh"
+//        self.yAccelerometerValue.text="Heyyyyyy"
+//        self.zAccelerometerValue.text="Looooool"
     }
    
     
